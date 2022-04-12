@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Chat UOL</title>
 </head>
 <body>
-    
+    <div class="header-fixed">
+        <div class="header">
+            <img src="assets/logo-uol.png">
+            <ion-icon name="people"></ion-icon>
+        </div>
+    </div>
+    <div class="container">
+        <div class="caixa-mensagem sala"><p>(09:21:45)  <strong>João</strong> entra na sala...</p></div>
+        <div class="caixa-mensagem"><p>(09:22:28)  <strong>João</strong> para <strong>Todos: </strong>Bom dia</p></div>
+        <div class="caixa-mensagem"><p>(09:22:38)  <strong>Maria</strong> para <strong>João</strong>:  Oi João :)</p></div>
+        <div class="caixa-mensagem reservada"><p>(09:22:48)  <strong>João</strong> reservadamente para <strong>Maria:</strong>  Oi gatinha quer tc?</p></div>
+        <div class="caixa-mensagem sala"><p>(09:22:58)  <strong>Maria</strong>  sai da sala...</p></div>
+    </div>
+    <div class="footer-fixed">
+        <div class="footer">
+            <input type="text" placeholder="Escreva aqui...">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
