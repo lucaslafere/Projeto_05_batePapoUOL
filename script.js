@@ -26,6 +26,8 @@ function enviarUsuario (resposta) {
 function usuarioInvalido (error) {
     console.log("Status code: " + error.response.status);
     console.log("Mensagem de erro: " + error.response.data);
+    alert("Digite outro nome");
+    window.location.reload(true);
 }
 
 setInterval (function (){
