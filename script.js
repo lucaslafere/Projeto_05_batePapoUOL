@@ -38,7 +38,7 @@ setInterval(function () {
 
 // adicionando display de mensagens ao body
 
-setInterval(updateMensagem, 3000);
+// setInterval(updateMensagem, 3000);
 
 function updateMensagem() {
     let promiseMsg = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
@@ -126,12 +126,9 @@ function errorMensagem(error) {
 //bonus
 
 function selecionar (el) {
-
-    if (el.contains("selecionado")){
-    el.children[2].classList.remove("escondido")
-    el.classList.remove("selecionado")
-    }el.children[2].classList.add("escondido")
-    el.classList.add("selecionado")
+    el.children[2].classList.toggle("escondido")
+    el.classList.toggle("selecionado")
+    
 }
 
 
