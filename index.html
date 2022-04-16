@@ -15,7 +15,7 @@
     <div class="header-fixed">
         <div class="header">
             <img src="assets/logo-uol.png">
-            <ion-icon name="people"></ion-icon>
+            <ion-icon name="people" onclick="mostrarLista()"></ion-icon>
         </div>
     </div>
     <div class="container">
@@ -23,7 +23,43 @@
     <div class="footer-fixed">
         <div class="footer">
             <input type="text" placeholder="Escreva aqui..." value="">
+            <h1>Enviando para ${to} (${type}</h1>
             <ion-icon name="paper-plane-outline" onclick="enviarMensagem()"></ion-icon>
+        </div>
+    </div>
+    <div class="lista-participantes escondido">
+        <div class="lateral-transparente"></div>
+        <div class="lateral-participantes">
+            <div class="topo">
+                <h2>Escolha um contato
+                para enviar mensagem:</h2>
+            </div>
+                <div class="contato">
+                    <ion-icon name="people"></ion-icon>
+                    <h3>Todos</h3>
+                </div>
+                <div class="contato">
+                    <ion-icon name="person-circle"></ion-icon>
+                    <h3>João</h3>
+                </div>
+                <div class="contato">
+                    <ion-icon name="person-circle"></ion-icon>
+                    <h3>Maria</h3>
+                </div>
+                <div class="divisoria">
+                    <h2>Escolha a visibilidade:</h2>
+                </div>
+                <div class="visibilidade">
+                    <ion-icon name="lock-open"></ion-icon>
+                    <h3>Público</h3>
+                </div>
+                <div class="visibilidade">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <h3>Reservadamente</h3>
+                </div>
+                <div class="divisoria" onclick="esconderLista()">
+                    <h2>Voltar</h2>
+                </div>
         </div>
     </div>
 

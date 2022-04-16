@@ -38,7 +38,7 @@ setInterval(function () {
 
 // adicionando display de mensagens ao body
 
-setInterval(updateMensagem, 3000);
+// setInterval(updateMensagem, 3000);
 
 function updateMensagem() {
     let promiseMsg = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
@@ -47,7 +47,7 @@ function updateMensagem() {
     promiseMsg.catch(tratarErro);
 }
 
-
+updateMensagem();
 
 function tratarMsg(resposta) {
 
@@ -122,3 +122,17 @@ function errorMensagem(error) {
 }
 
 //fim do envio de mensagem
+
+//bonus
+
+//abrir lista de participantes
+
+const lista = document.querySelector(".lista-participantes")
+
+function mostrarLista () {
+    lista.classList.remove("escondido");
+}
+
+function esconderLista () {
+    lista.classList.add("escondido");
+}
