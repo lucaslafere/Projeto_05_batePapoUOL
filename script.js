@@ -38,7 +38,7 @@ setInterval(function () {
 
 // adicionando display de mensagens ao body
 
-// setInterval(updateMensagem, 3000);
+setInterval(updateMensagem, 3000);
 
 function updateMensagem() {
     let promiseMsg = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
