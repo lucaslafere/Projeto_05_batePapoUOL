@@ -52,6 +52,19 @@ body {
 
 /* Conteúdo */
 
+h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+
+    align-items: center;
+
+    color: #AAAAAA;
+
+    margin-left: 8px;
+}
+
 p {
     margin-right: 8px;
     margin-left: 8px;
@@ -125,6 +138,19 @@ input[type=text] {
 
     border: none;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
 
 .footer ion-icon {
     font-size: 26px;
