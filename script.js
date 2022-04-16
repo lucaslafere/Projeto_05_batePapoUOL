@@ -120,6 +120,13 @@ function errorMensagem(error) {
     console.log("Mensagem de erro " + error.response.data);
     window.location.reload(true);
 }
+const enter = document.querySelector("input");
+enter.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        enviarMensagem();
+    }
+});
+
 
 //fim do envio de mensagem
 
