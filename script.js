@@ -30,7 +30,7 @@ function usuarioInvalido(error) {
 setInterval(function () {
     axios.post("https://mock-api.driven.com.br/api/v6/uol/status", nomeArmazenado);
     console.log("Você está online");
-}, 5000)
+}, 4000)
 
 // fim status check usuario
 
@@ -38,19 +38,17 @@ setInterval(function () {
 
 // adicionando display de mensagens ao body
 
-// setInterval(updateMensagem, 3000);
+setInterval(updateMensagem, 3000);
 
 function updateMensagem() {
     let promiseMsg = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
-    container.innerHTML = ``;
     promiseMsg.then(tratarMsg);
     promiseMsg.catch(tratarErro);
 }
 
-updateMensagem();
 
 function tratarMsg(resposta) {
-
+    apagarMensagens();
     for (let i = 0; i < resposta.data.length; i++) { //funcao que busca msgs
 
         const time = resposta.data[i].time;
@@ -59,9 +57,14 @@ function tratarMsg(resposta) {
         const text = resposta.data[i].text;
         const type = resposta.data[i].type;
 
+
         adicionarMensagens(time, from, to, text, type);
         container.lastChild.scrollIntoView();
     }
+}
+
+function apagarMensagens () {
+    container.innerHTML = ``;
 }
 
 
