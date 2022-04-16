@@ -75,7 +75,7 @@ function adicionarMensagens(time, from, to, text, type) { //funçao que adiciona
         `<div class="caixa-mensagem ${type}"><h1>(${time})</h1> <p> <strong>${from}</strong> para 
         <strong>${to}: </strong>${text}</p></div>`
     }
-    else if (type === "message") {
+    else if (type === "message" && to === "Todos") {
         container.innerHTML +=
             `<div class="caixa-mensagem ${type}"><h1>(${time})</h1> <p> <strong>${from}</strong> para 
         <strong>${to}: </strong>${text}</p></div>`
