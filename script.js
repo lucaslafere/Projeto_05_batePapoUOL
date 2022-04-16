@@ -121,9 +121,11 @@ function confirmaMensagem() {
 function errorMensagem(error) {
     console.log("Status code: " + error.response.status);
     console.log("Mensagem de erro " + error.response.data);
-    window.location.reload(true);
 }
+
+//fazer enviar mensagem com enter
 const enter = document.querySelector("input");
+
 enter.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         enviarMensagem();
