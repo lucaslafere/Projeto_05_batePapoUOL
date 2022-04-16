@@ -125,6 +125,16 @@ function errorMensagem(error) {
 
 //bonus
 
+function selecionar (el) {
+
+    if (el.contains("selecionado")){
+    el.children[2].classList.remove("escondido")
+    el.classList.remove("selecionado")
+    }el.children[2].classList.add("escondido")
+    el.classList.add("selecionado")
+}
+
+
 //abrir lista de participantes
 
 const lista = document.querySelector(".lista-participantes")
@@ -135,4 +145,11 @@ function mostrarLista () {
 
 function esconderLista () {
     lista.classList.add("escondido");
+}
+
+const lateralParticipantes = document.querySelector(".conteudo")
+
+function listaParticipantes (to, type) {
+    lateralParticipantes.innerHTML +=
+    ``
 }

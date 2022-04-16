@@ -265,3 +265,13 @@ h3 {
     margin-right: 6px;
     font-size: 22px;
 }
+.conteudo {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.divisoria h2 {
+    cursor: pointer;
+}

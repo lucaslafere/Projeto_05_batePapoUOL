@@ -34,32 +34,40 @@
                 <h2>Escolha um contato
                 para enviar mensagem:</h2>
             </div>
-                <div class="contato">
+            <div class="conteudo">
+                <div class="contato" onclick="selecionar(this)">
                     <ion-icon name="people"></ion-icon>
                     <h3>Todos</h3>
+                    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
                 </div>
-                <div class="contato">
+                <div class="contato" onclick="selecionar(this)">
                     <ion-icon name="person-circle"></ion-icon>
                     <h3>João</h3>
+                    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
                 </div>
-                <div class="contato">
+                <div class="contato" onclick="selecionar(this)">
                     <ion-icon name="person-circle"></ion-icon>
                     <h3>Maria</h3>
+                    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
                 </div>
+            </div>
                 <div class="divisoria">
                     <h2>Escolha a visibilidade:</h2>
                 </div>
-                <div class="visibilidade">
+                <div class="visibilidade" onclick="selecionar(this)">
                     <ion-icon name="lock-open"></ion-icon>
                     <h3>Público</h3>
+                    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
                 </div>
-                <div class="visibilidade">
+                <div class="visibilidade" onclick="selecionar(this)">
                     <ion-icon name="lock-closed"></ion-icon>
                     <h3>Reservadamente</h3>
+                    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
                 </div>
-                <div class="divisoria" onclick="esconderLista()">
-                    <h2>Voltar</h2>
-                </div>
+            
+            <div class="divisoria" onclick="esconderLista()">
+                <h2>Voltar</h2>
+            </div>
         </div>
     </div>
 
