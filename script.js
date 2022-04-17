@@ -23,7 +23,7 @@ function enviarUsuario(resposta) {
 function usuarioInvalido(error) {
     console.log("Status code: " + error.response.status);
     console.log("Mensagem de erro: " + error.response.data);
-    alert("Digite outro nome");
+    alert("Esse nome já está em uso, por favor digite outro nome");
     window.location.reload(true);
 }
 
