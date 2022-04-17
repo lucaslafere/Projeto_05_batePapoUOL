@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 
 
+updateMensagem();
+updateParticipantes();
 
 // nome, envio de usuário, status check
 
@@ -16,7 +18,7 @@ requisicao.then(enviarUsuario);
 requisicao.catch(usuarioInvalido);
 
 
-function enviarUsuario(resposta) {
+function enviarUsuario() {
     console.log("Enviou usuário corretamente");
 }
 
@@ -33,8 +35,6 @@ setInterval(function () {
 }, 4000)
 
 // fim status check usuario
-
-
 
 // adicionando display de mensagens ao body
 
@@ -63,7 +63,7 @@ function tratarMsg(resposta) {
     }
 }
 
-function apagarMensagens () {
+function apagarMensagens() {
     container.innerHTML = ``;
 }
 
@@ -125,7 +125,7 @@ function errorMensagem(error) {
 //fazer enviar mensagem com enter
 const enter = document.querySelector("input");
 
-enter.addEventListener("keydown", function(event) {
+enter.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         enviarMensagem();
     }
@@ -136,10 +136,10 @@ enter.addEventListener("keydown", function(event) {
 
 //bonus
 
-function selecionar (el) {
+function selecionar(el) {
     el.children[2].classList.toggle("escondido")
     el.classList.toggle("selecionado")
-    
+
 }
 
 
@@ -147,17 +147,64 @@ function selecionar (el) {
 
 const lista = document.querySelector(".lista-participantes")
 
-function mostrarLista () {
+function mostrarLista() {
     lista.classList.remove("escondido");
 }
 
-function esconderLista () {
+function esconderLista() {
     lista.classList.add("escondido");
 }
 
 const lateralParticipantes = document.querySelector(".conteudo")
 
-function listaParticipantes (to, type) {
-    lateralParticipantes.innerHTML +=
-    ``
+//receber lista de participantes
+
+const conteudo = document.querySelector(".conteudo");
+
+setInterval (updateParticipantes, 10000);
+
+function updateParticipantes() {
+    console.log("Atualizando participantes")
+    const promiseParticipantes = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants")
+    promiseParticipantes.then(tratarParticipantes);
+    promiseParticipantes.catch(errorParticipantes);
 }
+
+
+
+function tratarParticipantes(resposta) { //atualizar participantes
+    apagarParticipantes();
+
+    for (let i = 0; i < resposta.data.length; i++) {
+        const name = resposta.data[i].name;
+        listaParticipantes(name);
+    }
+}
+
+
+function errorParticipantes(error) {
+    console.log("Status code:" + error.response.status);
+    console.log("Mensagem de erro:" + error.response.data);
+}
+
+
+function listaParticipantes(name) {
+
+    conteudo.innerHTML +=
+        `
+<div class="contato" onclick="selecionar(this)">
+    <ion-icon name="person-circle"></ion-icon>
+    <h3>${name}</h3>
+    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
+</div>`
+}
+
+function apagarParticipantes() {
+    conteudo.innerHTML = `<div class="contato" onclick="selecionar(this)">
+    <ion-icon name="people"></ion-icon>
+    <h3>Todos</h3>
+    <ion-icon name="checkmark-outline" class="escondido"></ion-icon>
+</div> `
+}
+
+//fim participantes
