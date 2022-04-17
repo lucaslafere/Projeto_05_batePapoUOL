@@ -67,7 +67,6 @@ function apagarMensagens () {
     container.innerHTML = ``;
 }
 
-
 function adicionarMensagens(time, from, to, text, type) { //funçao que adiciona ao html
     if (type === "status") {
         container.innerHTML +=
