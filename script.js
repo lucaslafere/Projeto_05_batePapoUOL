@@ -1,6 +1,5 @@
 const container = document.querySelector(".container");
-
-
+//mudança inutil pra dar push pra colocar o token
 updateMensagem();
 updateParticipantes();
 
